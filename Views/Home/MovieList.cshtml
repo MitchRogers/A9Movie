@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "List of Movies";
+}
+
+@model IEnumerable<Movie>
+
+<h1>Browse through some of the favorites!</h1>
+
+<table class="table table-striped table-hover table-bordered">
+    <thead class="font-weight-bold">
+        <tr>
+            <th>Movie Title</th>
+            <th>Category</th>
+            <th>Rating</th>
+            <th>Director</th>
+            <th>Year Filmed</th>
+            <th>Notes</th>
+            <th>Delete</th>
+            <th>Edit Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            if (x.Title == "Independence Day")
+            {
+                continue;
+            }
+            else
+            {
+        <tr>
+            <td>@x.Title</td>
+            <td>@x.Category</td>
+            <td>@x.Rating</td>
+            <td>@x.Director</td>
+            <td>@x.Year</td>
+            <td>@x.Notes</td>
+            <td><button>Delete</button></td>
+            <td><button>Edit</button></td>
+        </tr>
+            }
+        }
+    </tbody>
+</table>

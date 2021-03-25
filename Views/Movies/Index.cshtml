@@ -1,0 +1,80 @@
+﻿@model IEnumerable<A9Movie.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Movie List</h1>
+<br />
+
+<table class="table table-bordered table-striped table-hover" width="100%">
+    <col style="width:10%">
+    <col style="width:22%">
+    <col style="width:7%">
+    <col style="width:18%">
+    <col style="width:7%">
+    <col style="width:22%">
+    <col style="width:7%">
+    <col style="width:7%">
+    <thead class="font-weight-bold">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Director)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Director)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a>
+                    @*<a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |*@
+                </td>
+                <td class="text-center">
+                    <a asp-action="Delete" asp-route-id="@item.MovieId" class="text-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>
+    <a asp-action="Create">Add a Movie</a>
+</p>
