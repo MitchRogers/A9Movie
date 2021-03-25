@@ -9,6 +9,7 @@
 <br />
 
 <table class="table table-bordered table-striped table-hover" width="100%">
+    @*format column widths in table*@
     <col style="width:10%">
     <col style="width:22%">
     <col style="width:7%">
@@ -42,6 +43,7 @@
         </tr>
     </thead>
     <tbody>
+        @*for loop running through each instance in the database.*@
         @foreach (var item in Model)
         {
             <tr>
@@ -63,10 +65,12 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Notes)
                 </td>
+                @*edit button to modify desired movie*@
                 <td class="text-center">
                     <a asp-action="Edit" asp-route-id="@item.MovieId">Edit</a>
                     @*<a asp-action="Details" asp-route-id="@item.MovieId">Details</a> |*@
                 </td>
+                @*delete button to delete desired movie*@
                 <td class="text-center">
                     <a asp-action="Delete" asp-route-id="@item.MovieId" class="text-danger">Delete</a>
                 </td>

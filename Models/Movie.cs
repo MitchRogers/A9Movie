@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace A9Movie.Models
 {
+    // movie object with correct validators
     public class Movie
     {
         [Key]

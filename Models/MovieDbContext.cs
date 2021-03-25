@@ -13,6 +13,7 @@ namespace A9Movie.Models
            
         }
 
+        // enables us to query from the database 
         public DbSet<Movie> Movies { get; set; }
     }
 }

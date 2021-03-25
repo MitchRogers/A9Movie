@@ -6,8 +6,7 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <style>        li {margin: 0 10px;}
-    </style>
+    <style>li {margin: 0 10px;}</style>
 </head>
 <body>
     <header>
@@ -15,6 +14,7 @@
             <div class="container">
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
+                        @*both the Home and Movies controller are accessed and actions are used from both to navigate*@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>

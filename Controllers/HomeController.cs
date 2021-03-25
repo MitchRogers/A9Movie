@@ -19,6 +19,7 @@ namespace A9Movie.Controllers
             context = con;
         }
 
+        /*Index page view */
         public IActionResult Index()
         {
             return View();
@@ -28,6 +29,7 @@ namespace A9Movie.Controllers
         {
             return View();
         }
+        /* action to add a movie to the database */
         [HttpPost]
         public IActionResult AddMovie(Movie movie)
         {
@@ -38,7 +40,7 @@ namespace A9Movie.Controllers
             }
             return View();
         }
-
+        /* action to access the data through the context that is set up in MovieDbContext */
         public IActionResult MovieList()
         {
             return View(context.Movies);
